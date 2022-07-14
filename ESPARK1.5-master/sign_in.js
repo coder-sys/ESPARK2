@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,TextInput,TouchableOpacity } from 'react-native';
 import React,{useState} from 'react'
+import {GoogleLogin} from 'react-google-login';
 import Particle_Background from './starbg';
 export default function SignIn (props){
    
@@ -39,7 +40,13 @@ export default function SignIn (props){
           }
         }}><Text>Sign in</Text></button>
         </div>
-
+      <GoogleLogin 
+      clientId={'672590221729-shi326ntu91q9ghsf0pd7rt8hh56vb3n.apps.googleusercontent.com'}
+      onSuccess={()=>console.log('success')}
+      onFailure={()=>console.log('failure')}
+      cookiePolicy={'single_host_origin'}
+      isSignedIn={true}
+/>
     </View>
   );
   
