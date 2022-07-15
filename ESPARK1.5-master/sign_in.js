@@ -42,7 +42,7 @@ export default function SignIn (props){
         </div>
       <GoogleLogin 
       clientId={'672590221729-shi326ntu91q9ghsf0pd7rt8hh56vb3n.apps.googleusercontent.com'}
-      onSuccess={()=>console.log('success')}
+      onSuccess={(res)=>console.log(res.profileObj)}
       onFailure={()=>console.log('failure')}
       cookiePolicy={'single_host_origin'}
       isSignedIn={true}
