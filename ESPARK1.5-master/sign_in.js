@@ -1,8 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,TextInput,TouchableOpacity } from 'react-native';
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {GoogleLogin} from 'react-google-login';
 import Particle_Background from './starbg';
+import {gapi} from 'gapi-script'
+
 export default function SignIn (props){
    
   const [fname,setFname] = useState("")
@@ -16,7 +18,16 @@ export default function SignIn (props){
   const [checked_lastname,setChecked_lastname] = useState('')
   const [checked_firstname,setChecked_firstname] = useState('')
   const [checked_email,setChecked_email] = useState('')
+   useEffect(()=>{
 
+    function start(){
+      gapi.client.init({
+        'clientId':'615921346526-8gs4b74dja97fje48tv2o459a6g7e9ns.apps.googleusercontent.com',
+        scope:''
+      })
+    }
+    gapi.load('client:auth2',start)
+  })
   return (
     <View >
       <Particle_Background/>
