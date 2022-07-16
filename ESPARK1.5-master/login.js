@@ -2,6 +2,7 @@ import { useLinkProps } from '@react-navigation/native';
 import React,{useState} from 'react'
 import { StyleSheet, Text, View,TextInput,TouchableOpacity, Alert } from 'react-native';
 import Particle_Background from './starbg';
+import {gapi} from 'gapi-script'
 
 export default function Login(props){
     const [fname,setFname] = useState("")
